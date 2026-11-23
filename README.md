@@ -187,18 +187,20 @@ src/main/java/com/example/jpa_final/
 - Java 17+
 - Maven 3.9+
 - PostgreSQL running on port 5432 with a database named `data_jpa`
+- The database password in the `DB_PASSWORD` environment variable (the username defaults to `postgres`, or `root` for the MySQL profile, and can be changed with `DB_USERNAME`)
 
 ### Setup
 
 ```bash
-# Clone the repository
-git clone https://github.com/<username>/jpa-educational-platform.git
-cd jpa-educational-platform
+# Clone the repository (the Maven project is in the "Jpa final" folder)
+git clone https://github.com/cvijeticc/spring-data-jpa-playground.git
+cd "spring-data-jpa-playground/Jpa final"
 
 # Create the database (PostgreSQL)
 psql -U postgres -c "CREATE DATABASE data_jpa;"
 
 # Run with default PostgreSQL profile
+export DB_PASSWORD=your_password
 ./mvnw spring-boot:run
 
 # Or run with MySQL profile
